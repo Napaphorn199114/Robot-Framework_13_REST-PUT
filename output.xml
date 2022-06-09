@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220607 16:28:53.604" rpa="false" schemaversion="3">
+<suite id="s1" name="Rest Put" source="D:\Advance_Robot_Python\Robot Framework_13_REST PUT\rest_put.robot">
+<test id="s1-t1" name="PUT" line="5">
+<kw name="PUT" library="REST">
+<arg>/users/2</arg>
+<arg>{ "isBoolean": true, "isNull": null, "company": { "name":"" ,"code":0.09 } }</arg>
+<tag>http</tag>
+<doc>*Sends a PUT request to the endpoint.*</doc>
+<status status="PASS" starttime="20220607 16:28:53.960" endtime="20220607 16:28:54.904"/>
+</kw>
+<kw name="Boolean" library="REST">
+<arg>$.isBoolean</arg>
+<arg>true</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON boolean.*</doc>
+<status status="PASS" starttime="20220607 16:28:54.905" endtime="20220607 16:28:54.938"/>
+</kw>
+<kw name="Null" library="REST">
+<arg>$.isNull</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON null.*</doc>
+<status status="PASS" starttime="20220607 16:28:54.938" endtime="20220607 16:28:54.966"/>
+</kw>
+<kw name="String" library="REST">
+<arg>$..name</arg>
+<arg>${EMPTY}</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON string.*</doc>
+<status status="PASS" starttime="20220607 16:28:54.967" endtime="20220607 16:28:54.993"/>
+</kw>
+<kw name="Number" library="REST">
+<arg>$..code</arg>
+<arg>0.09</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field as JSON number.*</doc>
+<status status="PASS" starttime="20220607 16:28:54.994" endtime="20220607 16:28:55.017"/>
+</kw>
+<kw name="Missing" library="REST">
+<arg>$.key1</arg>
+<tag>assertions</tag>
+<doc>*Asserts the field does not exist.*</doc>
+<status status="PASS" starttime="20220607 16:28:55.018" endtime="20220607 16:28:55.042"/>
+</kw>
+<kw name="Output" library="REST">
+<arg>response body</arg>
+<tag>I/O</tag>
+<doc>*Outputs JSON to terminal or a file.*</doc>
+<msg timestamp="20220607 16:28:55.043" level="INFO">
+{
+    "isBoolean": true,
+    "isNull": null,
+    "company": {
+        "name": "",
+        "code": 0.09
+    },
+    "id": 2
+}</msg>
+<status status="PASS" starttime="20220607 16:28:55.043" endtime="20220607 16:28:55.061"/>
+</kw>
+<status status="PASS" starttime="20220607 16:28:53.960" endtime="20220607 16:28:55.062"/>
+</test>
+<status status="PASS" starttime="20220607 16:28:53.606" endtime="20220607 16:28:55.063"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Rest Put">Rest Put</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
